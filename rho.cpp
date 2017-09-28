@@ -14,7 +14,7 @@ using namespace std;
 
 static unsigned int rand_between(unsigned int lo, unsigned int hi)
 {
-	return static_cast<unsigned int>(floor(random() * (hi - lo + 1) / RAND_MAX) + lo);
+	return lo + rand() / (RAND_MAX / (hi - lo + 1) + 1);
 }
 
 static void make_input(unsigned int **arr, size_t *size)
