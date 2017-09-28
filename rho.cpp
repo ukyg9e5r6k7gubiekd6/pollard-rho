@@ -39,24 +39,24 @@ static void show_arr(const unsigned int *arr, size_t size) {
 
 static unsigned int f(const unsigned int *arr, size_t n)
 {
-	return arr[n - 1];
+	return arr[n];
 }
 
 static unsigned int rho(const unsigned int *arr, size_t size)
 {
 	unsigned int a, b;
 
-	a = f(arr, f(arr, size));
-	b = f(arr, size);
+	a = f(arr, f(arr, size - 1) - 1);
+	b = f(arr, size - 1);
 	while (a != b) {
-		a = f(arr, f(arr, a));
-		b = f(arr, b);
+		a = f(arr, f(arr, a - 1) - 1);
+		b = f(arr, b - 1);
 	}
 
 	a = size;
 	while (a != b) {
-		a = f(arr, a);
-		b = f(arr, b);
+		a = f(arr, a - 1);
+		b = f(arr, b - 1);
 	}
 
 	return a;
