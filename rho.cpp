@@ -78,6 +78,7 @@ int main(int argc, char **argv)
 	show_arr(arr, size);
 	unsigned int dup = rho(arr, size);
 	check_dup(arr, size, dup);
+	delete [] arr;
 
 	return EXIT_SUCCESS;
 }
