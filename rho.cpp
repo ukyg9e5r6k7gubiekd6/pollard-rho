@@ -1,5 +1,18 @@
 /*
  * rho.c
+ *
+ * Implementation of Pollard's Rho method in C++.
+ *
+ * The references I found online when searching for this name
+ * were all to integer factorisation.
+ *
+ * The below implementation, by contrast, finds a repeated integer
+ * in an array of length n + 1 containing integers in [1..n],
+ * in linear time with O(n) space complexity, where the array is
+ * read-only.
+ *
+ * Evidently there is a connection between integer factorisation and
+ * finding duplicates which escapes me.
  */
 
 #include <iostream>
